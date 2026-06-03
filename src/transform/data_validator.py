@@ -3,15 +3,16 @@ import pandera as pa
 import pandas as pd
 from loguru import logger
 
+
 class DataValidator:
     """Validates a DataFrame against expected schema rules defined in schema.yaml.
-    
+
     Args:
         config: Schema config dict loaded from schema.yaml.
     """
     def __init__(self, config: dict) -> None:
         self._config = config
-    
+
     def _build_schema(self, has_target: bool = True) -> pa.DataFrameSchema:
         """Build the pandera schema from config.
 
@@ -34,7 +35,7 @@ class DataValidator:
         if has_target:
             columns[target_col] = pa.Column(float, coerce=True, nullable=False, checks=[pa.Check.gt(0)])
         return pa.DataFrameSchema(columns=columns, strict=False)
-    
+
     def validate(self, df: pd.DataFrame, is_train: bool = True) -> pd.DataFrame:
         """Validate a DataFrame against the schema.
 

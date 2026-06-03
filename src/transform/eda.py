@@ -113,7 +113,6 @@ class EDA:
         plt.tight_layout()
         plt.show()
 
-
     @staticmethod
     def numerical_vs_target(df: pd.DataFrame, col: str, target: str, clip_percentile: float = 99.0) -> None:
         """Plot scatter of a numerical feature vs target, clipped for display only.

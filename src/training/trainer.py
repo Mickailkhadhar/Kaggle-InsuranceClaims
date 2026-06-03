@@ -3,6 +3,7 @@ import pandas as pd
 from loguru import logger
 from xgboost import XGBRegressor
 
+
 class Trainer:
     """Fits an XGBoost regressor using config-driven parameters.
 

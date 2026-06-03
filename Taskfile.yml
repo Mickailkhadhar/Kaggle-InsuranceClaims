@@ -13,9 +13,9 @@ tasks:
       - uv sync
 
   install:
-    desc: Install project as editable package
+    desc: Install project as editable package (including dev extras)
     cmds:
-      - uv pip install -e .
+      - uv pip install -e ".[dev]"
 
   unit-tests:
     desc: Run unit tests only

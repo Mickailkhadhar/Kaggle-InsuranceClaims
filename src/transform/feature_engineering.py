@@ -10,9 +10,9 @@ class FeatureEngineer:
     @staticmethod
     def extract_datetime_features(df: pd.DataFrame) -> pd.DataFrame:
         """
-        Extract features from DataTimeOfAccident and DateReported. 
+        Extract features from DataTimeOfAccident and DateReported.
 
-        Args: 
+        Args:
             df: Input DataFrame with raw datetime columns.
 
         Returns:
@@ -29,7 +29,7 @@ class FeatureEngineer:
         df = df.drop(columns=["DateTimeOfAccident", "DateReported"])
         logger.info("Datetime features extracted")
         return df
-    
+
     @staticmethod
     def drop_text_columns(df: pd.DataFrame) -> pd.DataFrame:
         """
@@ -45,7 +45,7 @@ class FeatureEngineer:
         df = df.drop(columns=text_cols)
         logger.info(f"Dropped text columns: {text_cols}")
         return df
-    
+
     @staticmethod
     def encode_categoricals(df: pd.DataFrame) -> pd.DataFrame:
         """Encode low-cardinality categorical columns to integers.
@@ -184,4 +184,3 @@ class FeatureEngineer:
         df = df.drop(columns=existing)
         logger.info(f"Dropped low-signal features: {existing}")
         return df
-        
