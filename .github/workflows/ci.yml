@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip uv
-          task install
+          uv pip install --system -e ".[dev]"
 
       - name: Lint with flake8
         run: task lint
