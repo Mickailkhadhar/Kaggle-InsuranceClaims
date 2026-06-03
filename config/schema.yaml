@@ -1,0 +1,18 @@
+target_column: UltimateIncurredClaimCost
+id_column: ClaimNumber
+
+features:
+  categorical: []
+  numerical:
+    - Age
+    - WeeklyWages
+    - HoursWorkedPerWeek
+    - InitialIncurredCalimsCost
+    - days_to_report
+    - wage_to_initial_ratio
+    - is_back
+    - is_head
+    - is_surgery
+    - is_fracture
+    - is_burn
+    - is_contusion

@@ -1,0 +1,26 @@
+xgboost:
+  random_state: 42
+  n_jobs: -1
+  enable_categorical: True
+  objective: reg:tweedie
+  monotone_constraints: "(0, 1, 0, 1, 1, -1, 0, 0, 0, 0, 0, 0)"
+
+
+
+cv:
+  n_folds: 5
+  n_trials: 120
+
+search_space:
+  n_estimators: [100, 1000]
+  learning_rate: [0.001, 0.3]
+  max_depth: [3, 20]
+  subsample: [0.6, 1.0]
+  colsample_bytree: [0.6, 1.0]
+  min_child_weight: [1, 10]
+  reg_alpha: [0.0, 10]
+  reg_lambda: [0.0, 10]
+  tweedie_variance_power: [1.0, 2.0]
+  gamma: [0.0, 5.0]
+  colsample_bylevel: [0.6, 1.0]
+  max_delta_step: [0.0, 10.0]

@@ -1,0 +1,39 @@
+version: "3"
+
+tasks:
+  create-venv:
+    desc: Create virtual environment with uv
+    cmds:
+      - uv venv
+      - uv init
+
+  update-venv:
+    desc: Sync dependencies from lockfile
+    cmds:
+      - uv sync
+
+  install:
+    desc: Install project as editable package
+    cmds:
+      - uv pip install -e .
+
+  unit-tests:
+    desc: Run unit tests only
+    cmds:
+      - uv run pytest tests/ --ignore=tests/integration/ -v
+
+  integration-tests:
+    desc: Run integration tests only
+    cmds:
+      - uv run pytest tests/integration/ -v
+
+  lint:
+    desc: Lint source and test files with flake8
+    cmds:
+      - uv run flake8 src/ tests/ --count --select=E9,F63,F7,F82 --show-source --statistics
+      - uv run flake8 src/ tests/ --count --max-line-length=120 --statistics
+
+  test:
+    desc: Run all tests (unit + integration)
+    cmds:
+      - uv run pytest tests/ -v

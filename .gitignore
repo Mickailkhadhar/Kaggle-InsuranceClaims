@@ -1,0 +1,95 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.installed.cfg
+lib/
+lib64/
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Distribution / packaging
+.Python
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ruff / linting
+.ruff_cache/
+
+# Data files (large)
+data/train.csv
+data/test.csv
+data/sample_submission.csv
+
+# Submissions
+data/submission_*.csv
+
+# Models / outputs
+models/
+outputs/
+*.pkl
+*.joblib
+*.h5
+
+# Markdown (keep only README)
+*.md
+!README.md
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Optuna
+*.db
+optuna_study/
+
+# Logs
+logs/
+*.log
